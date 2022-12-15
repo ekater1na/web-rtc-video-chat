@@ -1,14 +1,16 @@
 import React from 'react';
-import { Typography, AppBar } from '@material-ui/core'
-
+import { Typography, AppBar } from '@mui/material'
+import { makeStyles } from '@mui/styles';
 import VideoPlayer from './components/VideoPlayer'
 import Options from './components/Options'
 import Notifications from './components/Notifications'
 
+
 const App = () => {
+
     return (
-        <div>
-            <AppBar position='static' color='inherit'>
+        <div className='wrapper'>
+            <AppBar className='appBar' position='static' color='inherit'>
                 <Typography variant='h2' align='center'>Video Chat App</Typography>
             </AppBar>
             <VideoPlayer />
