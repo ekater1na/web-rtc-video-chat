@@ -1,6 +1,5 @@
 import React from 'react';
 import { Typography, AppBar } from '@mui/material'
-import { makeStyles } from '@mui/styles';
 import VideoPlayer from './components/VideoPlayer'
 import Options from './components/Options'
 import Notifications from './components/Notifications'
