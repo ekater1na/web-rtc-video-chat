@@ -74,6 +74,8 @@ const ContextProvider = ({ children }) => {
 
       peer.signal(signal);
     });
+
+    connectionRef.current = peer;
   };
 
   const leaveCall = () => {
@@ -92,6 +94,7 @@ const ContextProvider = ({ children }) => {
         myVideo,
         userVideo,
         stream,
+        name,
         setName,
         callEnded,
         me,
