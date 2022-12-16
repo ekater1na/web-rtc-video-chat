@@ -2,12 +2,13 @@
   "name": "web-rtc-video-chat",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.mjs",
+  "type": "module",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon index.mjs",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "format": "prettier --write './**.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
