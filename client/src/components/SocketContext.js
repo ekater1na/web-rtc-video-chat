@@ -7,9 +7,9 @@ const SocketContext = createContext();
 const socket = io('https://video-chat-2pmv.onrender.com/');
 
 const ContextProvider = ({ children }) => {
-  const [stream, setStream] = useState(null);
+  const [stream, setStream] = useState();
   const [me, setMe] = useState('');
-  const [call, setCall] = useState(null);
+  const [call, setCall] = useState({});
   const [callAccepted, setCallAccepted] = useState(false);
   const [callEnded, setCallEnded] = useState(false);
   const [name, setName] = useState('');
@@ -19,19 +19,11 @@ const ContextProvider = ({ children }) => {
   const connectionRef = useRef();
 
   useEffect(() => {
-    const getUserMedia = async () => {
-      try {
-        navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then((currentStream) => {
-          setStream(currentStream);
+    navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then((currentStream) => {
+      setStream(currentStream);
 
-          myVideo.current.srcObject = currentStream;
-        });
-      } catch (err) {
-        console.log(err);
-      }
-    };
-
-    getUserMedia();
+      myVideo.current.srcObject = currentStream;
+    });
 
     socket.on('me', (id) => setMe(id));
 
